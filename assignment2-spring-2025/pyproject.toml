@@ -1,0 +1,38 @@
+[build-system]
+requires = [ "poetry-core>=1.0.0",]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+version = "0.0.0"
+description = ""
+authors = [ "Kumar Abhishek <klnu8@gatech.edu>",]
+name = "cs7643_deep_learning.assignment2"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[tool.pytest]
+python_files = "test_*.py"
+testpaths = [ "tests",]
+
+[tool.poetry.scripts]
+data_extraction = "data_extraction:entry_point"
+
+[tool.poetry.dependencies]
+python = "~3.12"
+numpy = "*"
+pyyaml = "*"
+matplotlib = "*"
+jupyter = "*"
+pytest = "*"
+tqdm = "*"
+boto3 = {version = "*", source = "PyPI"}
+botocore = {version = "*", source = "PyPI"}
+
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+fail_under = "25"
